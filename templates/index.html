@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Say Hello</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="C:\Users\HP\Desktop\CODING\PYTHON\PROJECTS\Flask projects\hello-app\statics\css\style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #00a199; /* Dark Blue color code */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvxF9IRjP3Il-w1H45vcNN93o-iGy10OCoRMzGhtoGsEF-sgetakPD0ov8PKU2CayJOV0&usqp=CAU" alt="">
+                <form action="greet" method="post">
+                    {% for message in get_flashed_messages() %}
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                    <div class="mb-3">
+                        <label for="name_input" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name_input" name="name_input">
+                    </div>
+                    <button type="submit" class="btn btn-primary">GREET</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS (Optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-LgO3k6F7r5FuP2z5zW5g5z5FkMQwz/3F8ae5F5h5u5L/5a5f5u5G5f5Q5i5I5d5D5" crossorigin="anonymous"></script>
+</body>
+</html>
